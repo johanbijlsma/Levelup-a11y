@@ -1,0 +1,661 @@
+/**
+ * Blood theme for reveal.js
+ * Author: Walther http://github.com/Walther
+ *
+ * Designed to be used with highlight.js theme
+ * "monokai_sublime.css" available from
+ * https://github.com/isagalaev/highlight.js/
+ *
+ * For other themes, change $codeBackground accordingly.
+ *
+ */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+	--background-color: #222;
+	--main-font: Ubuntu, sans-serif;
+	--main-font-size: 40px;
+	--main-color: #eee;
+	--block-margin: 20px;
+	--heading-margin: 0 0 20px 0;
+	--heading-font: Ubuntu, sans-serif;
+	--heading-color: #eee;
+	--heading-line-height: 1.2;
+	--heading-letter-spacing: normal;
+	--heading-text-transform: uppercase;
+	--heading-text-shadow: 2px 2px 2px #222;
+	--heading-font-weight: normal;
+	--heading1-text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+		0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+		0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+		0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+		0 20px 20px rgba(0, 0, 0, 0.15);
+	--heading1-size: 3.77em;
+	--heading2-size: 2.11em;
+	--heading3-size: 1.55em;
+	--heading4-size: 1em;
+	--code-font: monospace;
+	--link-color: #a23;
+	--link-color-hover: #dd5566;
+	--selection-background-color: #a23;
+	--selection-color: #fff;
+}
+
+.reveal-viewport {
+	background: #222;
+	background-color: #222;
+}
+
+.reveal {
+	font-family: Ubuntu, 'sans-serif';
+	font-size: 40px;
+	font-weight: normal;
+	color: #eee;
+}
+
+.reveal ::selection {
+	color: #fff;
+	background: #a23;
+	text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+	color: #fff;
+	background: rgb(229, 132, 6);
+	text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+	line-height: 1.3;
+	font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	margin: 0 0 20px 0;
+	color: #eee;
+	font-family: Ubuntu, 'sans-serif';
+	font-weight: normal;
+	line-height: 1.2;
+	letter-spacing: normal;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px #222;
+	word-wrap: break-word;
+}
+
+.reveal h1 {
+	font-size: 2.11em;
+}
+
+.reveal h2 {
+	font-size: 1.55em;
+}
+
+.reveal h3 {
+	font-size: 1em;
+}
+
+.reveal h4 {
+	font-size: 0.8em;
+}
+
+.reveal h1 {
+	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+		0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+		0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+	margin: 20px 0;
+	line-height: 1.3;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+	max-width: 95%;
+	max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+	font-weight: bold;
+}
+
+.reveal em {
+	font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+	display: inline-block;
+	text-align: left;
+	margin: 0 0 0 1em;
+}
+
+.reveal ol {
+	list-style-type: decimal;
+}
+
+.reveal ul {
+	list-style-type: disc;
+}
+
+.reveal ul ul {
+	list-style-type: square;
+}
+
+.reveal ul ul ul {
+	list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+	display: block;
+	margin-left: 40px;
+}
+
+.reveal dt {
+	font-weight: bold;
+}
+
+.reveal dd {
+	margin-left: 40px;
+}
+
+.reveal blockquote {
+	display: block;
+	position: relative;
+	width: 70%;
+	margin: 20px auto;
+	padding: 5px;
+	font-style: italic;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+	display: inline-block;
+}
+
+.reveal q {
+	font-style: italic;
+}
+
+.reveal pre {
+	display: block;
+	position: relative;
+	width: 90%;
+	margin: 20px auto;
+	text-align: left;
+	font-size: 0.55em;
+	font-family: monospace;
+	line-height: 1.2em;
+	word-wrap: break-word;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+	font-family: monospace;
+	text-transform: none;
+}
+
+.reveal pre code {
+	display: block;
+	padding: 5px;
+	overflow: auto;
+	max-height: 400px;
+	word-wrap: normal;
+}
+
+.reveal table {
+	margin: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.reveal table th {
+	font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+	text-align: left;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	border-bottom: 1px solid;
+}
+
+.reveal table th[align='center'],
+.reveal table td[align='center'] {
+	text-align: center;
+}
+
+.reveal table th[align='right'],
+.reveal table td[align='right'] {
+	text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.reveal sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+
+.reveal sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+
+.reveal small {
+	display: inline-block;
+	font-size: 0.6em;
+	line-height: 1.2em;
+	vertical-align: top;
+}
+
+.reveal small * {
+	vertical-align: top;
+}
+
+.reveal img {
+	margin: 20px 0;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+	color: #a23;
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+	color: #dd5566;
+	text-shadow: none;
+	border: none;
+}
+
+.reveal .roll span:after {
+	color: #fff;
+	background: #6a1520;
+}
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+	border: 4px solid #eee;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+	transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+	border-color: #a23;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+	color: #a23;
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+	background: rgba(0, 0, 0, 0.2);
+	color: #a23;
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+	.backgrounds {
+		background-color: #222;
+	}
+}
+
+.reveal p {
+	font-weight: 300;
+	text-shadow: 1px 1px #222;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	font-weight: 700;
+}
+
+.reveal p code {
+	background-color: #23241f;
+	display: inline-block;
+	border-radius: 7px;
+}
+
+.reveal small code {
+	vertical-align: baseline;
+}
+
+/* custom styling */
+section.css {
+	background: rgb(62 88 227);
+}
+
+ul.realy-small {
+	font-size: 40%;
+	column-count: 8;
+	column-gap: 20px;
+	width: 100%;
+	list-style: none;
+}
+
+.links {
+	text-align: left;
+	column-count: 2;
+	column-gap: 20px;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.45);
+}
+.links:last-child {
+	border-bottom: none;
+}
+
+.links strong {
+	display: block;
+}
+
+#simpleDemo4 {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	pointer-events: all !important;
+}
+#simpleDemo4 .demo__container {
+	margin: 10px auto;
+	width: 80%;
+	border: dashed 2px rgba(0, 0, 30, 0.3);
+	padding: 20px;
+	background-color: #33333375;
+	border-radius: 30px;
+	position: relative;
+}
+#simpleDemo4 .codeblock {
+	position: relative;
+	z-index: 11;
+}
+
+#simpleDemo4 .demo__title {
+	position: relative;
+	color: #8ac640;
+	margin: 0 0 6px;
+	z-index: 10;
+}
+
+#simpleDemo4 .window {
+	min-height: 300px;
+	background-image: url(https://friendly-northcutt-f51086.netlify.app/karl-kohler-lPhqnp4uw5c-unsplash.jpg);
+	background-size: cover;
+	background-position: 50% 16%;
+	padding: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+#simpleDemo4 .star {
+	background-color: yellow;
+	position: relative;
+	z-index: 0;
+	color: rgb(204, 63, 8);
+	height: 80px;
+	width: 80px;
+	fill: yellow;
+	clip-path: polygon(
+		50% 0%,
+		83% 12%,
+		100% 43%,
+		94% 78%,
+		68% 100%,
+		32% 100%,
+		6% 78%,
+		0% 43%,
+		17% 12%
+	);
+	text-align: center;
+	line-height: 5rem;
+	font-weight: bold;
+	font-size: 1rem;
+	position: relative;
+	transform: translate(0 -200px);
+	opacity: 0;
+}
+
+#simpleDemo4 .title {
+	text-transform: uppercase;
+	font-size: 3rem;
+	text-shadow: 2px 2px 13px #8686e05d;
+	text-underline-position: below;
+	text-underline-offset: 12px;
+	text-decoration: underline;
+	text-decoration-color: rgba(134, 134, 224, 0.363);
+	opacity: 0;
+	position: relative;
+	transform: translate(-500px);
+	text-align: center;
+}
+
+#simpleDemo4 .text {
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+	transform: translate(0, 200px);
+}
+
+#simpleDemo4 .slide {
+	opacity: 0;
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+#simpleDemo4 .sparkles {
+	width: 12px;
+	height: 12px;
+	background: darkkhaki;
+	filter: drop-shadow(0px 0px 5px);
+	border-radius: 50px 10%;
+	opacity: 0;
+	position: absolute;
+}
+#simpleDemo4 .sparkles:nth-child(odd) {
+	transform: rotate(65deg);
+}
+
+#simpleDemo4 .sparkles:after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	background: darkkhaki;
+	filter: drop-shadow(0px 0px 0px);
+	border-radius: 50px 10%;
+	position: absolute;
+	transform: rotate(85deg);
+}
+/* code {
+    font-family: monospace;
+    color: #8ac640;
+  }
+  pre ~ code {
+    color: white;
+  } */
+
+#simpleDemo4 button.button {
+	border-radius: 10px;
+	border: 1px solid darkblue;
+	padding: 8px 32px;
+	box-shadow: inset 0 0 0 transparent;
+	z-index: 10;
+	position: relative;
+}
+#simpleDemo4 .button.start:hover {
+	box-shadow: inset 0 -6px 1px #8ac640;
+	cursor: pointer;
+	transition: all 200ms ease-in-out;
+	color: #8ac640;
+}
+
+#simpleDemo4 .button.reset {
+	box-shadow: inset 0 -40px 1px rgb(204, 63, 8);
+	transition: all 200ms ease-in-out;
+	color: #fff;
+}
+
+#simpleDemo4 .button.reset:hover {
+	box-shadow: inset 0 -6px 1px #8ac640;
+	cursor: pointer;
+	transition: all 200ms ease-in-out;
+	color: #8ac640;
+}
+
+#simpleDemo4 .show-code-container {
+	position: absolute;
+	top: 21px;
+	right: 0;
+	display: inline-block;
+	min-width: 120px;
+	z-index: 11;
+}
+
+#simpleDemo4 .show-code-container label {
+	display: inline-block;
+}
+
+.svelte-suo60u {
+	box-sizing: border-box;
+	font-family: 'Jost', Verdana, sans-serif;
+}
+@font-face {
+	font-family: Jost;
+	src: url('/Jost-VariableFont_ital,wght.ttf');
+}
+.demo__container.svelte-7jnu0g.svelte-7jnu0g {
+	margin: 10px auto;
+	width: 80%;
+	border: dashed 2px rgba(0, 0, 30, 0.3);
+	padding: 20px;
+	background-color: #33333375;
+	border-radius: 30px;
+	position: relative;
+}
+.demo__title.svelte-7jnu0g.svelte-7jnu0g {
+	color: #8ac640;
+	margin: 0 0 6px;
+}
+.weather-selector-container.svelte-7jnu0g.svelte-7jnu0g {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: center;
+	background-color: #8ac640;
+}
+.weather-option.svelte-7jnu0g.svelte-7jnu0g {
+	padding: 0px 20px;
+	overflow: hidden;
+}
+.weather-option.svelte-7jnu0g label.svelte-7jnu0g {
+	height: 100%;
+	padding: 20px 5px;
+	border: 1px dashed transparent;
+}
+.weather-option.svelte-7jnu0g label.svelte-7jnu0g:hover,
+.weather-option.svelte-7jnu0g label.svelte-7jnu0g:focus {
+	cursor: pointer;
+	border: 1px dashed tomato;
+}
+input[type='radio'].svelte-7jnu0g.svelte-7jnu0g {
+	position: absolute;
+	appearance: none;
+	visibility: hidden;
+}
+input[type='radio']:checked + label.svelte-7jnu0g.svelte-7jnu0g {
+	color: tomato;
+	background: white;
+	height: 100%;
+	padding: 20px 5px;
+	font-weight: 700;
+}
+.card.svelte-7jnu0g.svelte-7jnu0g {
+	height: 300px;
+	width: 200px;
+	background: white;
+	margin: 30px auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6), 0px 0px 5px rgba(0, 0, 0, 0.6);
+	padding: 50px 0 0 0;
+	overflow: hidden;
+}
+.card__title.svelte-7jnu0g.svelte-7jnu0g {
+	text-align: center;
+	text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+	font-size: clamp(13px, 10vw, 30px);
+	text-transform: capitalize;
+}
+.card.svelte-7jnu0g svg.svelte-7jnu0g {
+	transform: scale(0);
+}
+.card.clear.svelte-7jnu0g.svelte-7jnu0g {
+	background-image: radial-gradient(whitesmoke, lightblue);
+}
+.card.sunny.svelte-7jnu0g.svelte-7jnu0g {
+	background-image: radial-gradient(whitesmoke, rgb(59, 104, 230));
+}
+.card.cloudy.svelte-7jnu0g.svelte-7jnu0g {
+	background-image: radial-gradient(whitesmoke, slategray);
+}
+.card.raining.svelte-7jnu0g.svelte-7jnu0g {
+	background-image: radial-gradient(whitesmoke, darkslategray);
+}
+.card.snowing.svelte-7jnu0g.svelte-7jnu0g {
+	background-image: radial-gradient(whitesmoke, rgb(109, 119, 148));
+}
+.card.stormy.svelte-7jnu0g.svelte-7jnu0g {
+	background-image: radial-gradient(slategray, darkslategray);
+}
+
+/*# sourceMappingURL=bundle.css.map */
